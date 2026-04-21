@@ -21,7 +21,7 @@ The system is deployed using **Gradio** for an interactive web interface.
   * Visual annotation
   * Status message (Defect / No Defect)
 
-👉 Implemented in: 
+👉 Implemented in: detection.py
 
 ---
 
@@ -35,7 +35,7 @@ The system is deployed using **Gradio** for an interactive web interface.
   * Cropped plate image
   * Detection summary
 
-👉 Implemented in: 
+👉 Implemented in: detection.py
 
 ---
 
@@ -43,7 +43,7 @@ The system is deployed using **Gradio** for an interactive web interface.
 
 ### 1. Glass Detection App
 
-👉 File: 
+👉 File: glass_main.py
 
 **Features:**
 
@@ -59,7 +59,7 @@ The system is deployed using **Gradio** for an interactive web interface.
 
 ### 2. Plate Detection App
 
-👉 File: 
+👉 File: plate_main.py
 
 **Features:**
 
@@ -89,8 +89,8 @@ The system is deployed using **Gradio** for an interactive web interface.
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/Blatopio/ImageDetection
+cd ImageDetection
 ```
 
 ### 2. Install Dependencies
