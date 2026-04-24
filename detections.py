@@ -1,6 +1,8 @@
 from ultralytics import YOLO
+import easyocr
+import matplotlib.pyplot as plt
 from collections import Counter
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 import cv2
 import numpy as np
 
@@ -71,6 +73,9 @@ def detect_plateNumber(image):
     
     cropped_img = image_np[y1:y2, x1:x2] # type: ignore
 
-    summary = "\n".join([f"{label}: {count}" for label, count in class_counter.items()])
-    return Image.fromarray(annotated_img), Image.fromarray(cropped_img), summary or "NO OBJECT DETECTED!"
+    reader = easyocr.Reader(['en'])
+    plate_number = reader.readtext(np.array(cropped_img))
 
+
+    summary = "\n".join([f"{label}: {count}" for label, count in class_counter.items()])
+    return Image.fromarray(annotated_img), Image.fromarray(cropped_img), summary + str(plate_number) or "NO PLATE NUMBER DETECTED!"
